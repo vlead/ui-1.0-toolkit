@@ -1,0 +1,50 @@
+body {
+ margin-left : 15%;
+ margin-right: 10%;
+}
+
+dt {
+ margin-top: 1em;
+ font-weight : bold;
+ }
+
+
+h1, .title, h2, h3  {
+   display: block;
+   margin-top: 1em;
+   margin-bottom: 2em;
+   margin-left: 0em;
+   line-height: 1.2;
+}
+
+/* h1.title {
+   display: inline;
+   margin-left: 0em;
+}
+*/
+
+
+.timestamp {
+   color: #8B0000; /* darkred */
+}
+
+
+a {
+    color: darkblue; 
+   text-decoration: none;
+}
+
+li {
+
+   margin-bottom: 2em;
+   color: black;
+
+}
+
+tr {
+   margin-bottom: 0.5em;
+}
+
+body #content {
+    padding-top: 10px;
+}
