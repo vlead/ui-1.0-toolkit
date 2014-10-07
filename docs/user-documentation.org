@@ -14,10 +14,10 @@ The objective of using UI Toolkit 1.0 is to standardize the formats of all labs 
 - *Unified look and feel:* The UI Toolkit offers a uniform user interface for authoring and interacting with the virtual labs. It also provides the labs a simple and uniform web interface and a homogeneous hosting framework.
 - *Coding standards:* The Toolkit ensures that lab developers follow good programming practices to make the code of the labs efficient and readable. 
 - *Upgrading widgets and components:* The UI 1.0 template makes it easy for lab developers to modify and update widgets and/or components.  
-- *Provision for better versions of template:* In future, if advanced versions of the UI template are created, the lab developers can trasfer the lab content automatically as per the newer versions.
+- *Provision for better versions of template:* In future, if advanced versions of the UI template are created, the lab developers can transfer the lab content automatically as per the newer versions.
 
 * Structure of the Lab
-Below are the instructions for a lab developer to strcuture the lab as per UI template 1.0.
+Below are the instructions for a lab developer to structure the lab as per UI template 1.0.
 
 a) As a lab developer, after you have the content (theory, procedures, experiment, simulations, quiz, images, videos etc.) of your lab ready, you need to understand the structure of the lab according to UI template 1.0.
 
@@ -67,7 +67,7 @@ The template has three sections: Header, Article and Footer.
  
 *Header* contains the logo and heading of the page.
 *Article* contains the content of the page. It can be further divided into sub-sections such as header, footer, content etc.
-*Footer* contains the licensing details. The lab developer may add the logo of the institute here. Header and Footer remains the same for all the webpages.
+*Footer* contains the licensing details. The lab developer may add the logo of the institute here. Header and Footer remains the same for all the web pages.
 
 * How to use the template?
 There are two ways to convert a lab based on the cases below 
@@ -220,3 +220,4 @@ This is how the lab is structured after conversion.
 
 
 
+     

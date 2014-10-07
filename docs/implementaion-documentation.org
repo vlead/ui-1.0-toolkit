@@ -10,8 +10,8 @@ The UI Toolkit consists of the Virtual Labs User Interface framework. Apart from
 extract the content of labs hosted in Amrita UI format to  UI 1.0 framework. 
 The objective of using UI Toolkit 1.0 is to standardize the formats of all labs according to the Virtual-labs UI 1.0 framework.
 
-Therefore, UI Toolkit 1.0 is a compilation of software tools used to build software programs that can run on the web. The toolkit is browser-compatible as it is based on Web Standards such as HTML5, CSS and JavaScript.The Vritual Labs UI 1.0 framework provides a set of CSS 
-classes and/or Javascript functions that:
+Therefore, UI Toolkit 1.0 is a compilation of software tools used to build software programs that can run on the web. The toolkit is browser-compatible as it is based on Web Standards such as HTML5, CSS and Java Script.The Virtual Labs UI 1.0 framework provides a set of CSS 
+classes and/or Java script functions that:
 1) Simplify the development of the layout
 2) Provide an attractive look and feel
 3) Provide consistent results across browsers with a lot of useful components.
@@ -21,10 +21,10 @@ The toolkit uses html5/css because the objective is to build a reusable design f
 - *Unified look and feel:* The UI Toolkit offers a uniform user interface for authoring and interacting with the virtual labs. It also provides the labs a simple and uniform web interface and a homogeneous hosting framework.
 - *Coding standards:* The Toolkit ensures that lab developers follow good programming practices to make the code of the labs efficient and readable. 
 - *Upgrading widgets and components:* The UI 1.0 template makes it easy for lab developers to modify and update widgets and/or components.  
-- *Provision for better versions of template:* In future, if advanced versions of the UI template are created, the lab developers can trasfer the lab content automatically as per the newer versions.
+- *Provision for better versions of template:* In future, if advanced versions of the UI template are created, the lab developers can transfer the lab content automatically as per the newer versions.
 
 * Structure of the Lab
-Below are the instructions for a lab developer to strcuture the lab as per UI template 1.0.
+Below are the instructions for a lab developer to structure the lab as per UI template 1.0.
 
 a) As a lab developer, after you have the content (theory, procedures, 
 experiment, simulations, quiz, images, videos etc.) of your lab ready, you need to understand the structure of the lab according to UI template 1.0.
@@ -65,7 +65,7 @@ The scripts folder should contain json file (lab descriptor), shell scripts, dep
 
 [[file:images/scripts.png]]  
 
-- *Build:* Build Script runs the *makefile* and copies the build folder to *localhost*. The script is invoked by *initialize* script.
+- *Build:* Build Script runs the *makefile* and copies the build folder to *local host*. The script is invoked by *initialize* script.
 - *Dependencies:* This file contains all the server-side dependencies of the lab as *dependencies.txt*
 - *Initialize:* The *initialize* script creates the initial environment for the lab by installing the server side dependencies for the lab and invokes the *build* script. To use *initialize* script, the lab developer must run the command ??.initialize scripts/dependencies.txt.?? *initialize* script takes dependencies.txt as an argument and installs the packages mentioned in the dependencies.txt file.
 - *Backup:* Stores the backup of the database used by the lab.
