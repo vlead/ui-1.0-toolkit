@@ -7,7 +7,7 @@
 * Introduction to UI Toolkit
 
 The UI Toolkit consists of the Virtual Labs User Interface framework. Apart from the Virtual Labs UI 1.0 template, the toolkit also contains helper scripts that 
-extract the content of labs hosted in Amrita UI format to  UI 1.0 framework. 
+extract the content of labs hosted in the Collaborative framework (Amrita UI format) to  UI 1.0 framework. 
 The objective of using UI Toolkit 1.0 is to standardize the formats of all labs according to the Virtual-labs UI 1.0 framework.
 
 Therefore, UI Toolkit 1.0 is a compilation of software tools used to build software programs that can run on the web. The toolkit is browser-compatible as it is based on Web Standards such as HTML5, CSS and Java Script.The Virtual Labs UI 1.0 framework provides a set of CSS 
@@ -26,8 +26,8 @@ The toolkit uses html5/css because the objective is to build a reusable design f
 * Structure of the Lab
 Below are the instructions for a lab developer to structure the lab as per UI template 1.0.
 
-a) As a lab developer, after you have the content (theory, procedures, 
-experiment, simulations, quiz, images, videos etc.) of your lab ready, you need to understand the structure of the lab according to UI template 1.0.
+a) After the lab developer has the content (theory, procedures, 
+experiment, simulations, quiz, images, videos etc.) of the lab ready, the lab developer must understand the structure of the lab according to UI template 1.0.
 
 [[./images/labs-structure.png]]
 
@@ -41,7 +41,7 @@ ui/src/lab/
 All the source files of the lab are in this location. The index.html and default.html files are available as read-only because these files need not be edited. 
 If you want to edit the html pages, you should edit only the content.html file in ui/src/lab/ and the ui/src/lab/exp1/ directory.
 
-c) While adding new experiments, make sure you create new directories following the same structure under ui/src/lab/"EXPERIMENT-ID" and change the content.html in the same directory. Do not edit the files index.html and default.html in the same directory. The ui/src/lab directory also contains js, images, and css directories. These directories hold your own custom files. 	
+c) While adding new experiments, the lab developer must create new directories following the same structure under ui/src/lab/"EXPERIMENT-ID" and change the content.html in the same directory. The lab developer should not edit the files index.html and default.html in the same directory. The ui/src/lab directory also contains js, images, and css directories. These directories hold the custom files of the lab developer. 	
 #+BEGIN_SRC python :tangle a.py
 ui/src/lib/ 	
 #+END_SRC
@@ -50,7 +50,7 @@ All the library files (like MathJax, jQuery, modernizr) are in this directory.
 ui/src/themes/ 	
 #+END_SRC
  	
-d) You need to choose the blue-icon (uses the iitb style, which uses icons for sections) to design the theme of the lab. The current release also has a maroon-grid (which uses iiith style, which does not display icons). Of course, you are free to design your own theme, and place it in the themes directory.
+d) The lab developer needs to choose the Blue-icon (uses the iitb style, which uses icons for sections) to design the theme of the lab. The current release also has a maroon-grid (which uses iiith style, which does not display icons). Of course, the developer is free to design his or her own theme, and place it in the themes directory.
 
 #+BEGIN_SRC python :tangle a.py
 ui/src/makefile 	
@@ -61,18 +61,18 @@ This file is used for building a release.
 ui/scripts 	
 #+END_SRC
 
-The scripts folder should contain json file (lab descriptor), shell scripts, dependencies file.
+The scripts folder should contain json file (lab descriptor), shell scripts, and dependencies file.
 
 [[file:images/scripts.png]]  
 
 - *Build:* Build Script runs the *makefile* and copies the build folder to *local host*. The script is invoked by *initialize* script.
 - *Dependencies:* This file contains all the server-side dependencies of the lab as *dependencies.txt*
-- *Initialize:* The *initialize* script creates the initial environment for the lab by installing the server side dependencies for the lab and invokes the *build* script. To use *initialize* script, the lab developer must run the command ??.initialize scripts/dependencies.txt.?? *initialize* script takes dependencies.txt as an argument and installs the packages mentioned in the dependencies.txt file.
+- *Initialize:* The *initialize* script creates the initial environment for the lab by installing the server side dependencies for the lab and invokes the *build* script. 
 - *Backup:* Stores the backup of the database used by the lab.
 - *Restore:* The *Restore* script restores the backup of the database used by the lab.
 - *Shutdown:* The *shutdown* script stops all the services on the container required to run the lab for the safe dissembling of the lab.
 - *Startup:* The *startup* script starts all the services on the container required to run the lab.
-- *labspec.json:* This is an automated script for building the lab on container automatically.
+- *labspec.json:* This is an automated script for building the lab automatically on the container.
 
 * The UI Template structure
 All the labs should follow the general structure of the template. 
@@ -234,16 +234,16 @@ Run the organise .sh file and prior to that give it execute permission.
 *** Execute the script to transfer content for a lab
 For each lab, you need to run the code manually for each page and more 
 precisely for all the "cnt" number under each experiment (or simulation).
-The command to do it are given in following subsections:
+The command to do it is given in the following subsections:
 Go inside the subject->branch->lab->experiment
 use cd command followed by path name.
 
-*** Transfer the content into blue-icon theme format
+*** Transfer the content into Blue-icon theme format
 "scrapper.py" is used to transfer the content from the Collaborative framework (Amrita's format) to UI 1.0.
 "link_changer.sh" is used to update the links to the images inside the experiment.
 "make" is used to build the lab.
 
-run the following command:
+Run the following command:
 
 #+BEGIN_SRC python :tangle a.py
 > ./all.py 
