@@ -14,8 +14,17 @@
 # packages mentioned in the dependencies.txt file. 
 
 # exporting the proxy server
-export http_proxy=http://proxy.iiit.ac.in:8080/
-export https_proxy=http://proxy.iiit.ac.in:8080/
+#export http_proxy=http://proxy.iiit.ac.in:8080/
+#export https_proxy=http://proxy.iiit.ac.in:8080/
+# read proxy settings from config file
+source ./config.sh
+if [[ -n $http_proxy ]]; then
+echo $http_proxy
+export http_proxy=$http_proxy
+fi
+if [[ -n $https_proxy ]]; then
+export https_proxy=$https_proxy
+fi
 
 # updating the packages
 apt-get update
