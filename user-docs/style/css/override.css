@@ -9,6 +9,11 @@ dt {
  }
 
 
+h1.title {
+   display: inline;
+   margin-left: 0em;
+}
+
 h1, .title, h2, h3  {
    display: block;
    margin-top: 1em;
@@ -17,11 +22,6 @@ h1, .title, h2, h3  {
    line-height: 1.2;
 }
 
-/* h1.title {
-   display: inline;
-   margin-left: 0em;
-}
-*/
 
 
 .timestamp {
@@ -29,22 +29,8 @@ h1, .title, h2, h3  {
 }
 
 
+
 a {
-    color: darkblue; 
-   text-decoration: none;
-}
-
-li {
-
-   margin-bottom: 2em;
-   color: black;
-
-}
-
-tr {
-   margin-bottom: 0.5em;
-}
-
-body #content {
-    padding-top: 10px;
+    color: #293e3d;
+    text-decoration: none;
 }
