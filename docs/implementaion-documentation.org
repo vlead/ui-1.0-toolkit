@@ -83,7 +83,7 @@ The template has three sections: Header, Article and Footer.
  
 *Header* contains the logo and heading of the page.
 *Article* contains the content of the page. It can be further divided into sub-sections such as header, footer, content etc.
-*Footer* contains the licensing details. The lab developer may add the logo of the institute here. Header and Footer remains the same for all the webpages.
+*Footer* contains the acknowledgement and licensing details of the proprietary software used. The lab developer may add the logo of the institute here. Header and Footer remains the same for all the webpages.
 
 * How to use the template?
 There are two ways to convert a lab based on the cases below 
