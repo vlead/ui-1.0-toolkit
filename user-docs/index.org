@@ -12,6 +12,4 @@ You will find documentation on the following (just click on them!)
 - [[./user-documentation.org][Introduction to Conversion of a Lab to UI 1.0 framework.]]  ::
     Contains sequence of instructions to convert a lab to UI 1.0 framework.
 
-- [[./implementaion-documentation.org][Implementation Details of conversion of a lab to UI 1.0 framework.]] :: 
-     Contains detailed explanation of each step in the conversion of a lab
-     to UI 1.0 frameowork.     
+
