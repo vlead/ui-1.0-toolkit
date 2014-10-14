@@ -6,7 +6,7 @@
 
 * Using UI 1.0 Toolkit
   
-The UI Toolkit consists of the Virtual Labs User Interface framework. Apart from the Virtual Labs UI 1.0 template, the toolkit also contains 
+The UI Toolkit consists of the Virtual Labs User Interface template version 1.0. Apart from the Virtual Labs UI 1.0 template, the toolkit also contains 
 helper scripts that extract the content of labs hosted in Collaborator Framework (Amrita format) to  UI 1.0 Framework. 
 The objective of using UI 1.0 Toolkit is to standardize the formats of all labs according to the Virtual-labs UI 1.0 framework. The UI 1.0 Toolkit 
 helps you achieve the following:
@@ -19,10 +19,10 @@ and readable.
 - *Provision for better versions of template:* In future, if advanced versions of the UI template are created, 
 the lab developers can transfer the lab content automatically as per the new versions.
 
-* How to Identify the template of your Lab?
-Before you start using the UI 1.0 Toolkit, you need to understand the structure of your lab. Your lab may be either in the Collaborative Framework 
-(Amrita Format) or is Unstrcutured (does not follow the UI 1.0 Template).
-If your lab is in Collaborative Format, then your lab URL should contain sub, brch, sim and cnt.
+* How to Identify the Template of your Lab?
+Before you start using the UI 1.0 Toolkit, you need to understand the structure of your lab. Your lab may be structured either in the Collaborative Framework 
+(Amrita Format) or may be unstrcutured (does not follow the UI 1.0 Template).
+If your lab is structured in Collaborative Format, your lab URL shall contain sub, brch, sim and cnt.
 Example (http://iitkgp.vlab.co.in/?sub=39&brch=124&sim=922&cnt=1)
 
 The description of the above url is as follows:   
@@ -38,35 +38,34 @@ The description of the above url is as follows:
 | cnt=1(the breakup of pages under each experiment) | Introduction, Aim, Theory etc                      |
 |---------------------------------------------------+----------------------------------------------------|
 
-If your lab does not follow this format then your lab is in Unstructured Format.
+If your lab does not follow this format, you can assume that your lab has an unstructured format.
 * How to Transform your Lab to the UI 1.0 Template?
-As discussed above, your lab may be in either the Collaborative Format (Amrita framework) or unstructured. Depending on the current 
+As discussed above, the strucutre of your lab may be in either the Collaborative Format (Amrita framework) or it may be unstructured. Depending on the current 
 structure of your lab, you need to follow the steps below to convert your lab. 
 ** Transform Unstructured Labs
 
-In the LIK, go to =ui-1.0-toolkit/src/template/src/lab/exp1/content.html=. This =content.html= contains "simple pendulum" experiment by default.
-Follow the instructions to transform default experiment into one experiment of your lab. 
+In the Lab Integration Kit (LIK), go to =ui-1.0-toolkit/src/template/src/lab/exp1/content.html=. This =content.html= contains "simple pendulum" experiment by default.
+Follow the instructions to transform the default experiment into one experiment of your lab. 
 
 
 *Step 1:* Mention the lab name under =header= and place your experiment name under =article= and replace the content accordingly 
-in each =section= for Aim, Theory and Procedure etc.
+in each =section= for Aim, Theory and Procedure.
 
 
-*Step 2:* Follow the step 1 for all experiments of your lab. List out the experiment names in =ui-1.0-toolkit/src/template/src/lab/content.html=.
+*Step 2:* Follow step 1 for all the experiments of your lab. List out the experiment names in =ui-1.0-toolkit/src/template/src/lab/content.html=.
 Give links to the listed experiment names. 
 
-This is how the html page of the experiment should be structured.
+This is how you need to structure the html page of the experiment.
 
 [[./images/labs-structure.png]]
 
 *** How to Validate that your lab confirms to UI 1.0 template?
-*Step 1:* Based on the operating system, scripts will differ. Therefore, check the scripts being used. If the operating system used is "CentOS", 
-use =ui-1.0-toolkit/scripts/centos-scripts= otherwise use =ui-1.0-toolkit/scripts/ubuntu-scripts= scripts.
+*Step 1:* Based on the operating system, the scripts will differ. Therefore, check the scripts being used. If the operating system used is "CentOS", 
+use =ui-1.0-toolkit/scripts/centos-scripts=. If the OS is Ubuntu, use =ui-1.0-toolkit/scripts/ubuntu-scripts= scripts.
 
-*Step 2:* Copy the =scripts= from the desired template (i.e. ubuntu-template or centos-template) and paste inside the =ui-1.0-toolkit/src/template=.
+*Step 2:* Copy the =scripts= from the path above and paste inside =ui-1.0-toolkit/src/template=.
 
-*Step 3:* After you have updated the content as per the UI template, edit the =ui-1.0-toolkit/src/template/scripts/dependencies.txt= 
-file and list out all the dependencies of the lab. 
+*Step 3:* After you have updated the content as per the UI template, edit the file =ui-1.0-toolkit/src/template/scripts/dependencies.txt= and list out all the dependencies of the lab. You will need these dependencies later during the auto-deployment of the lab. 
 
 *Step 4:* Run the following command
 #+BEGIN_SRC  :
@@ -84,18 +83,22 @@ This command will give all (read,write and execute) permissions to =initialise.s
 #+BEGIN_SRC :
 ./initialize.sh
 #+END_SRC
-This will automatically install all the dependencies and will run the =make= file as well as generate =build= folder and place =build= inside apache server.
-It will automatically runs and displays the default experiment in browser.
+This will automatically install the dependencies and run the =make= file as well as generate the =build= folder and place =build= inside the Apache server.
+It will automatically run and display the default experiment in the browser.
 
-*Step 7:* Click on =simple pendulum= link to display your lab. 
+*Step 7:* Finally, click on the =simple pendulum= link to display your lab. 
+Now the template is ready with content. It should resemble the strcuture below:
+
+Structure of the Lab after Conversion
+
+[[file:images/screenshot2.jpg]]  
 
 ** Transform Labs in Collaborator Framework (Amrita Format)
-To convert labs from the Collaborative framework (Amrita format) to UI 1.0, we have helper scripts in the UI
-toolkit that automates the process to a large extent, however, there are some changes 
-that need to be done manually.
+To convert labs from the Collaborative Framework (Amrita Format) to UI 1.0, you can use the helper scripts in the UI
+toolkit. The helper scripts automate the process to a large extent and you can change the rest manually.
 
 *** Instructions for using scripts
-The following instructions will help port content from the Collaborative format (Amrita format) theme to Blue-icon theme.
+The following instructions will help port the content from the Collaborative Framework (Amrita format) to the Blue-icon theme.
 
 *Step 1:* Run the following command
 #+BEGIN_SRC : 
@@ -144,19 +147,18 @@ This will change the directory to =kit=.
 #+BEGIN_SRC :
 > ./all.py 
 #+END_SRC
-This will run the =make= file as well as generate =build= folder and place =build= inside apache server.
-It will automatically runs and displays the default experiment in browser.
+This will run the =make= file as well as generate the =build= folder and place =build= inside the Apache server.
+It will automatically run and display the default experiment in the browser.
 
-*Step 10:* Click on =simple pendulum= link to display your lab. 
+*Step 10:* Click on the =simple pendulum= link to display your lab. 
+ 
+
+*Step 11:* Follow the same procedure for every experiment. After converting all the experiments, rename the folders experiment-wise 
+such as: exp1, exp2, exp3 so on and place them inside the =lab= folder. Content will open in the browser with Simple Pendulum sample experiment.
+You need to change the experiment name and click on it. The template should be ready with the content. It should resemble the strcuture below:
 
 
-*Step 11:* Follow the same procedure for every experiment. After converting all the experiments, rename the "exp1" folder experiment-wise 
-such as: exp1, exp2, exp3 so on and place them inside lab folder. Content will open in the browser with Simple pendulum sample experiment,
-change the experiment name and click on it. The template should be ready with the content added, but the 
-images at each tab may be missing. It may be like this:
-
-*** Observe the UI transfer (mapping)
-This is how the lab is structured after conversion.
+Structure of the Lab after Conversion
 
 [[file:images/screenshot2.jpg]]  
 
