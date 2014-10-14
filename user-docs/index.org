@@ -1,4 +1,4 @@
-#+title:  User manuals and documentation for UI 1.0 Tool Kit
+#+title:  User manual and documentation for UI 1.0 Tool Kit
 #+SETUPFILE: ./org-templates/level-0.org
 
 * Introduction
@@ -6,7 +6,7 @@
 This is the opening page of the user level documentation for the
 conversion of labs to UI 1.0 framework.
 
-You will find documentation on the following (just click on them!)
+You will find documentation on the following link (just click on them!)
 
 
 - [[./user-documentation.org][Introduction to Conversion of a Lab to UI 1.0 framework.]]  ::
