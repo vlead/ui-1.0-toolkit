@@ -158,7 +158,7 @@ images at each tab may be missing. It may be like this:
 *** Observe the UI transfer (mapping)
 This is how the lab is structured after conversion.
 
-[[file:images/screenshot1.png]]  
+[[file:images/screenshot2.jpg]]  
 
 
 
