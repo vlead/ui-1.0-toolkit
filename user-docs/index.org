@@ -51,10 +51,6 @@ Follow the instructions to convert the default experiment into one experiment of
 *Step 2:* Follow step 1 for all the experiments of your lab. List out the experiment names in =ui-1.0-toolkit/src/template/src/lab/content.html=.
 Give links to the listed experiment names. 
 
-This is how you need to structure the html page of the experiment.
-
-[[./images/labs-structure.png]]
-
 *** How to validate that your lab conforms to UI 1.0 template?
 *Step 1:* Based on the operating system, the scripts will differ. Therefore, check the scripts being used. If the operating system used is "CentOS", 
 use =ui-1.0-toolkit/scripts/centos-scripts=. If the OS is Ubuntu, use =ui-1.0-toolkit/scripts/ubuntu-scripts= scripts.
@@ -154,7 +150,12 @@ It will automatically run and display the default experiment in the browser.
 such as: exp1, exp2, exp3 so on and place them inside the =lab= folder. Content will open in the browser with Simple Pendulum sample experiment.
 You need to change the experiment name and add licensing details and acknowledgements in the footer section. 
 
-*Conclusion:* The template should be ready with the content. It should resemble the structure below:
+*Conclusion:* 
+This is how your lab structure should be:
+
+[[./images/labs-structure.png]]
+
+The template should be ready with the content. It should resemble the structure below:
 
 Structure of the Lab after Conversion
 
