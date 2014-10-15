@@ -1,15 +1,166 @@
-#+title:  User manual and documentation for UI 1.0 Tool Kit
+#+Title: User Documentation on Conversion of a lab to UI 1.0 Template
+#+Author: VLEAD
+#+Date:   [2014-09-18 Thursday]
 #+SETUPFILE: ./org-templates/level-0.org
+#+OPTIONS: ^:nil
 
-* Introduction
+* Using UI 1.0 Toolkit
+  
+The UI Toolkit consists of the Virtual Labs User Interface template version 1.0. Apart from the Virtual Labs UI 1.0 template, the toolkit also contains 
+helper scripts that extract the content of labs hosted in Collaborator Framework (Amrita format) to  UI 1.0 Framework. 
+The objective of using UI 1.0 Toolkit is to standardize the formats of all labs according to the Virtual-labs UI 1.0 framework. The UI 1.0 Toolkit 
+helps you achieve the following:
 
-This is the opening page of the user level documentation for the
-conversion of labs to UI 1.0 framework.
+- *Unified look and feel:* The UI 1.0 Toolkit offers a uniform user interface for authoring and interacting with the virtual labs. 
+It also provides the labs a simple and uniform web interface and a homogeneous hosting framework.
+- *Coding standards:* The Toolkit ensures that lab developers follow good programming practices to make the code of the labs efficient 
+and readable. 
+- *Upgrading widgets and components:* The UI 1.0 template makes it easy for lab developers to modify and update widgets and/or components.  
+- *Provision for better versions of template:* In future, if advanced versions of the UI template are created, 
+the lab developers can transfer the lab content automatically as per the new versions.
 
-You will find documentation on the following link (just click on them!)
+* How to Identify the Template of your Lab?
+Before you start using the UI 1.0 Toolkit, you need to understand the structure of your lab. Your lab may be structured either in the Collaborative Framework 
+(Amrita Format) or may be unstrcutured (does not follow the UI 1.0 Template).
+If your lab is structured in Collaborative Format, your lab URL shall contain sub, brch, sim and cnt.
+Example (http://iitkgp.vlab.co.in/?sub=39&brch=124&sim=922&cnt=1)
+
+The description of the above url is as follows:   
+|---------------------------------------------------+----------------------------------------------------|
+| url format                                        | example                                            |
+|---------------------------------------------------+----------------------------------------------------|
+| sub=39(subjects or domains)                       | Electrical Engineering                             |
+|---------------------------------------------------+----------------------------------------------------|
+| brch=124(branch or lab)                           | Analog Signals, Network and Measurement Laboratory |
+|---------------------------------------------------+----------------------------------------------------|
+| sim=922(experiment)                               | Verification of Superposition Theorem              |
+|---------------------------------------------------+----------------------------------------------------|
+| cnt=1(the breakup of pages under each experiment) | Introduction, Aim, Theory etc                      |
+|---------------------------------------------------+----------------------------------------------------|
+
+If your lab does not follow this format, you can assume that your lab has an unstructured format.
+* How to Transform your Lab to the UI 1.0 Template?
+As discussed above, the strucutre of your lab may be in either the Collaborative Format (Amrita framework) or it may be unstructured. Depending on the current 
+structure of your lab, you need to follow the steps below to convert your lab. 
+** Transform Unstructured Labs
+
+In the Lab Integration Kit (LIK), go to =ui-1.0-toolkit/src/template/src/lab/exp1/content.html=. This =content.html= contains "simple pendulum" experiment by default.
+Follow the instructions to transform the default experiment into one experiment of your lab. 
 
 
-- [[./user-documentation.org][Introduction to Conversion of a Lab to UI 1.0 framework.]]  ::
-    Contains sequence of instructions to convert a lab to UI 1.0 framework.
+*Step 1:* Mention the lab name under =header= and place your experiment name under =article= and replace the content accordingly 
+in each =section= for Aim, Theory and Procedure.
+
+
+*Step 2:* Follow step 1 for all the experiments of your lab. List out the experiment names in =ui-1.0-toolkit/src/template/src/lab/content.html=.
+Give links to the listed experiment names. 
+
+This is how you need to structure the html page of the experiment.
+
+[[./images/labs-structure.png]]
+
+*** How to Validate that your lab confirms to UI 1.0 template?
+*Step 1:* Based on the operating system, the scripts will differ. Therefore, check the scripts being used. If the operating system used is "CentOS", 
+use =ui-1.0-toolkit/scripts/centos-scripts=. If the OS is Ubuntu, use =ui-1.0-toolkit/scripts/ubuntu-scripts= scripts.
+
+*Step 2:* Copy the =scripts= from the path above and paste inside =ui-1.0-toolkit/src/template=.
+
+*Step 3:* After you have updated the content as per the UI template, edit the file =ui-1.0-toolkit/src/template/scripts/dependencies.txt= and list out all the dependencies of the lab. You will need these dependencies later during the auto-deployment of the lab. 
+
+*Step 4:* Run the following command
+#+BEGIN_SRC  :
+cd lik/ui-1.0-toolkit/src/template/scripts
+#+END_SRC
+This command will change the directory.
+
+*Step 5:* Run the following command
+ #+BEGIN_SRC :
+chmod 777 initialise.sh
+#+END_SRC
+This command will give all (read,write and execute) permissions to =initialise.sh=.
+
+*Step 6:* Run the following command
+#+BEGIN_SRC :
+./initialize.sh
+#+END_SRC
+This will automatically install the dependencies and run the =make= file as well as generate the =build= folder and place =build= inside the Apache server.
+It will automatically run and display the default experiment in the browser.
+
+*Step 7:* Finally, click on the =simple pendulum= link to display your lab. 
+Now the template is ready with content. It should resemble the strcuture below:
+
+Structure of the Lab after Conversion
+
+[[file:images/screenshot2.jpg]]  
+
+** Transform Labs in Collaborator Framework (Amrita Format)
+To convert labs from the Collaborative Framework (Amrita Format) to UI 1.0, you can use the helper scripts in the UI
+toolkit. The helper scripts automate the process to a large extent and you can change the rest manually.
+
+*** Instructions for using scripts
+The following instructions will help port the content from the Collaborative Framework (Amrita format) to the Blue-icon theme.
+
+*Step 1:* Run the following command
+#+BEGIN_SRC : 
+git clone https://github.com/vlead/ui-1.0-tool-kit.git
+#+END_SRC
+This command will check out the lik (lab integration kit) from github.
+
+*Step 2:* Run the following command 
+#+BEGIN_SRC :
+> mkdir map
+#+END_SRC
+This command will Create a folder called =map=.
+
+*Step 3:* Run the following command
+#+BEGIN_SRC :
+> cd map
+#+END_SRC
+This will change the directory to =map=.
+
+*Step 4:* Run the wget command inside the same directory.
+#+BEGIN_SRC :
+> wget -r -e robots=off http://iitkgp.vlabs.co.in
+#+END_SRC
+This command will get all the labs from all the disciplines of that particular institute.
+
+*Step 5:* Copy =organise.sh= from =lik/ui-1.o-toolkit/scripts/automated-scripts= and place inside =map= directory.
+
+*Step 6:* Run the following command:
+#+BEGIN_SRC :
+> chmod 777 organise.sh
+> ./organize.sh 
+#+END_SRC
+This command will give all the permissions to =organise.sh= and will automatically organise the directories in the form of folders with three 
+hierarchies with random numbers as names of these folders. Usually first, second and third hierarchy represents all the disciplines, labs and
+experiments of that particular institute.
+
+*Step 7:* Copy the =kit= folder from =lik/ui-1.o-toolkit/scripts/automated-scripts= and place inside each experiment folder.
+
+*Step 8:* Run the following command: 
+#+BEGIN_SRC :
+> cd kit
+#+END_SRC
+This will change the directory to =kit=.
+
+*Step 9:* Run the following command:
+#+BEGIN_SRC :
+> ./all.py 
+#+END_SRC
+This will run the =make= file as well as generate the =build= folder and place =build= inside the Apache server.
+It will automatically run and display the default experiment in the browser.
+
+*Step 10:* Click on the =simple pendulum= link to display your lab. 
+ 
+
+*Step 11:* Follow the same procedure for every experiment. After converting all the experiments, rename the folders experiment-wise 
+such as: exp1, exp2, exp3 so on and place them inside the =lab= folder. Content will open in the browser with Simple Pendulum sample experiment.
+You need to change the experiment name and click on it. The template should be ready with the content. It should resemble the strcuture below:
+
+
+Structure of the Lab after Conversion
+
+[[file:images/screenshot2.jpg]]  
+
 
 
