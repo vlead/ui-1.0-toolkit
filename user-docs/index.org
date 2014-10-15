@@ -8,13 +8,10 @@
   
 The UI Toolkit consists of the Virtual Labs User Interface template version 1.0. Apart from the Virtual Labs UI 1.0 template, the toolkit also contains 
 helper scripts that extract the content of labs hosted in Collaborative Framework (Amrita format) to  UI 1.0 Framework. 
-The objective of using UI 1.0 Toolkit is to standardize the formats of all labs according to the Virtual-labs UI 1.0 framework. The UI 1.0 Toolkit 
-helps you achieve the following:
+The objective of using UI 1.0 Toolkit is to standardize the formats of all labs according to the Virtual-labs UI 1.0 framework. The UI 1.0 Toolkit helps you achieve the following:
 
-- *Unified look and feel:* The UI 1.0 Toolkit offers a uniform user interface for authoring and interacting with the virtual labs. 
-     It also provides the labs a simple and uniform web interface and a homogeneous hosting framework.
-- *Coding standards:* The Toolkit ensures that lab developers follow good programming practices to make the code of the labs efficient 
-     and readable. 
+- *Unified look and feel:* The UI 1.0 Toolkit offers a uniform user interface for authoring and interacting with the virtual labs. It also provides the labs a simple and uniform web interface and a homogeneous hosting framework.
+- *Coding standards:* The Toolkit ensures that lab developers follow good programming practices to make the code of the labs efficient and readable. 
 - *Upgrading widgets and components:* The UI 1.0 template makes it easy for lab developers to modify and update widgets and/or components.  
 - *Provision for better versions of template:* In future, if advanced versions of the UI template are created, 
      the lab developers can transfer the lab content automatically as per the new versions.
@@ -23,10 +20,8 @@ helps you achieve the following:
 Before you start using the UI 1.0 Toolkit, you need to understand the structure of your lab. Your lab may be structured either in the Collaborative Framework 
 (Amrita Format) or may be unstructured (does not follow the UI 1.0 Template).
 
-If your lab is structured in Collaborative Format, your lab URL should contain sub, brch, sim and cnt.
-Example (http://iitkgp.vlab.co.in/?sub=39&brch=124&sim=922&cnt=1) 
+If your lab is structured in Collaborative Format, your lab URL should contain the following fields sub, brch, sim and cnt. For example, the URL of the lab http://iitkgp.vlab.co.in/?sub=39&brch=124&sim=922&cnt=1 is described as below:
 
-The description of the above url is as follows:   
 |---------------------------------------------------+----------------------------------------------------|
 | url format                                        | example                                            |
 |---------------------------------------------------+----------------------------------------------------|
@@ -44,14 +39,13 @@ If your lab does not follow this format, you can assume that your lab has an uns
 As discussed above, the structure of your lab may be in either the Collaborative Format (Amrita framework) or it may be unstructured. Depending on the current 
 structure of your lab, you need to follow the steps below to convert your lab.
  
-** Convert Unstructured Labs
+** Convert Unstructured Labs to UI 1.0 Format
 
 In the Lab Integration Kit (LIK), go to =ui-1.0-toolkit/src/template/src/lab/exp1/content.html=. This =content.html= contains "simple pendulum" experiment by default.
 Follow the instructions to convert the default experiment into one experiment of your lab. 
 
 
-*Step 1:* Mention the lab name under =header= and place your experiment name under =article= and replace the content accordingly 
-in each =section= for Aim, Theory and Procedure.
+*Step 1:* Mention the lab name under =header= and place your experiment name under =article= and replace the content accordingly in each =section= for Aim, Theory and Procedure. Add licensing details and acknowledgements in the footer section.
 
 
 *Step 2:* Follow step 1 for all the experiments of your lab. List out the experiment names in =ui-1.0-toolkit/src/template/src/lab/content.html=.
@@ -61,7 +55,7 @@ This is how you need to structure the html page of the experiment.
 
 [[./images/labs-structure.png]]
 
-*** How to Validate that your lab conforms to UI 1.0 template?
+*** How to validate that your lab conforms to UI 1.0 template?
 *Step 1:* Based on the operating system, the scripts will differ. Therefore, check the scripts being used. If the operating system used is "CentOS", 
 use =ui-1.0-toolkit/scripts/centos-scripts=. If the OS is Ubuntu, use =ui-1.0-toolkit/scripts/ubuntu-scripts= scripts.
 
@@ -92,7 +86,7 @@ sudo su (as a root). In case of proxy error, set proxy value in =ui-1.0-toolkit/
 
 *Step 7:* Finally, click on the =simple pendulum= link to display your lab. 
 
-** Convert Labs in Collaborative Framework (Amrita Format)
+** Convert Labs in Collaborative Framework (Amrita Format) to UI 1.0 Format
 To convert labs from the Collaborative Framework (Amrita Format) to UI 1.0, you can use the helper scripts in the UI
 toolkit. The helper scripts automate the process to a large extent and you can change the rest manually.
 
@@ -158,7 +152,7 @@ It will automatically run and display the default experiment in the browser.
 
 *Step 11:* Follow the same procedure for every experiment. After converting all the experiments, rename the folders experiment-wise 
 such as: exp1, exp2, exp3 so on and place them inside the =lab= folder. Content will open in the browser with Simple Pendulum sample experiment.
-You need to change the experiment name and click on it. 
+You need to change the experiment name and add licensing details and acknowledgements in the footer section. 
 
 *Conclusion:* The template should be ready with the content. It should resemble the structure below:
 
