@@ -15,7 +15,7 @@ Template. The UI 1.0 Toolkit helps you achieve the following:
 
 - *Unified look and feel:* The UI 1.0 Toolkit offers a uniform user
   interface for authoring and interacting with the virtual labs. It
-  also provides the labs a simple and uniform web interface and a
+  also provides labs a simple and uniform web interface and a
   homogeneous hosting framework.
 - *Coding standards:* The Toolkit ensures that lab developers follow
   good programming practices to make the code of the labs efficient
@@ -69,7 +69,7 @@ cd ui-1.0-toolkit
 #+END_EXAMPLE
 
 Edit the file =./src/template/src/lab/exp1/content.html=. This
-file =content.html= contains "simple pendulum" experiment by default.
+file =content.html= contains the simple pendulum experiment by default.
 Follow the instructions below to convert one of your experiments to UI
 1.0 Template.
 
@@ -138,7 +138,7 @@ need to run =initialize.sh=.
 *Step 7:* Finally, click on the =simple pendulum= link to display your
 lab.
 
-** Convert Labs in Collaborative Framework (Amrita Format) to UI 1.0 Template
+** How to Convert Labs in Collaborative Framework (Amrita Format) to UI 1.0 Template
 To convert labs from the Collaborative Framework (Amrita Format) to UI
 1.0 Template, you can use the helper scripts in the UI toolkit. The helper
 scripts automate the process to a large extent and you can change the
@@ -172,11 +172,12 @@ cd map
 *Step 4:* To get the sources of your institute, run the wget command
 inside the same directory.
 
+Provide the url of your lab that you want to convert to UI 1.0 template from the Amrita format. 
+
 #+BEGIN_EXAMPLE :
-wget -r -e robots=off http://iitkgp.vlabs.co.in
+wget -r -e robots=off http://<url of your lab linked to vlab.co.in>
 #+END_EXAMPLE
-This command will get all the labs from all the disciplines of
-IIT-KGP. Replace this url with your own institute's url.
+
 
 *Step 5:* Copy =organise.sh= from
 =../scripts/automated-scripts= and place
@@ -198,21 +199,29 @@ hierarchies and random numbers as names of these folders. Usually
 first, second and third hierarchy levels represent disciplines, labs
 and experiments respectively of that particular institute.
 
-If you get an error that resembles =index*\?sub*=, then open =organise.sh=, replace the line 
-=sublist=$(ls -1 index*\?sub* | cut -d'&' -f1 | cut -d'=' -f2 | sort -u)=
-with =sublist=$(ls -1 index*\_sub* | cut -d'&' -f1 | cut -d'=' -f2 | sort -u)=
-
-*Step 7:* Copy the =kit= folder from
-=../scripts/automated-scripts= and place inside each
-experiment folder.
+If you get an error that resembles =index*\?sub*=, then open
+=organise.sh= and replace the line 
 
 #+BEGIN_EXAMPLE :
-rsync -avzr ../scripts/automated-scripts/kit ./1173/243/212/
+sublist=$(ls -1 index*\?sub* | cut -d'&' -f1 | cut -d'=' -f2 | sort -u)
+#+END_EXAMPLE
+
+with 
+#+BEGIN_EXAMPLE :
+sublist=$(ls -1 index*\_sub* | cut -d'&' -f1 | cut -d'=' -f2 | sort -u)
+#+END_EXAMPLE
+
+*Step 7:* Copy the =kit= folder from =../scripts/automated-scripts=
+and place inside each experiment folder.
+
+
+#+BEGIN_EXAMPLE :
+rsync -avzr ../scripts/automated-scripts/kit ./<discipline>/<lab>/<experiment>/
 #+END_EXAMPLE
 
 *Step 8:* After copying, change to =kit= in each experiment.
 #+BEGIN_EXAMPLE :
-cd ./1173/243/212/kit/
+cd ./<discipline>/<lab>/<experiment>/
 #+END_EXAMPLE
 
 *Step 9:* Execute =all.sh=
@@ -228,9 +237,9 @@ This will open the experiment in the browser.
 *Step 11:* Follow the same procedure for every experiment. After
 converting all the experiments, rename the folders experiment-wise
 such as: exp1, exp2, exp3 so on and place them inside the =lab=
-folder. Content will open in the browser with Simple Pendulum sample
-experiment.  You need to change the experiment name and add licensing
-details and acknowledgements in the footer section.
+folder. Content will open in the browser with the simple pendulum
+sample experiment.  You need to change the experiment name and add
+acknowledgements in the footer section.
 
 * Conclusion
 After conversion, your lab:
