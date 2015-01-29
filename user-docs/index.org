@@ -241,6 +241,20 @@ folder. Content will open in the browser with the simple pendulum
 sample experiment.  You need to change the experiment name and add
 acknowledgements in the footer section.
 
+* Moving sql files to database folder
+ If a lab is running on a database. All the sql files related to the
+ lab have to be placed under =lab/src/database= directory.
+
+ Later, in =scripts= folder edit db_config.sh with the database name and
+ sql file with respect to the lab.
+
+ Make changes to the database credentials of the lab by modifing config.php file within the sources. Ensure that these four things are mentioned on to the config.php file
+ 1. $db = "DATABASE_NAME" #The database name shoud match with the name given at db_config.sh file
+ 2. $db_host = "localhost"; #Database host should be localhost
+ 3. $db_user = "root"; #Database user should always be root
+ 4. $db_password = ""; #password should be left blank
+
+ 
 * Conclusion
 After conversion, your lab:
 
