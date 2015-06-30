@@ -8,9 +8,7 @@ It also contains the structure and the layout files and samples of UI 1.0.
 
 1. `user-docs` - It contains documentation on how to use the UI toolkit.
 
-To generate HTML documentation, run make:
-
-`make all`
+    To generate HTML documentation, run make: `make all`
  
 2. `scripts` - It contains automated scripts which are used to convert Amrita's format to UI 1.0,
 CentOS/Ubuntu scripts are used to convert unstructured labs to UI 1.0.
